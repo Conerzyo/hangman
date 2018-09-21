@@ -1,3 +1,4 @@
+from operator import itemgetter
 import csv
 
 class Score:
@@ -46,7 +47,8 @@ class Score:
         scoreBoardsLocal = []
         with open (self.filepath, "r") as file:
             for line in csv.reader(file, delimiter=","):
-                scoreBoardsLocal.append(line[0:2])
+                line = [line[0], int(line[1])]
+                scoreBoardsLocal.append(line)
         return scoreBoardsLocal
         
     def print_score(self, scoreboards):
@@ -56,6 +58,15 @@ class Score:
             Args:
                 scoreboards: Input data which are going to be printed.
         """
+        temp = 0
         for nickname, score in scoreboards:
             nickLenght = 10 - len(nickname)
             print(" " * nickLenght + f"{nickname} : {score}")
+            temp += 1
+            if temp == 10:
+                break
+            
+            
+    def sort_score(self, scoreboards):
+        topTen = sorted(scoreboards, key=lambda x: x[1], reverse=True)
+        return topTen

@@ -103,7 +103,8 @@ class Game:
     
     def print_score(self):
         scoreboards = self.score_service.load_score_data()
-        self.score_service.print_score(scoreboards)
+        topTen = self.score_service.sort_score(scoreboards)
+        self.score_service.print_score(topTen)
 
 
     def add_word(self, word):
