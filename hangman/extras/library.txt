@@ -1,5 +1,3 @@
-patrik
-okurka
 forest
 wood
 polokolo
@@ -12,3 +10,6 @@ monday
 thursday
 wednesday
 tram
+cucumber
+prosecution
+christmas
