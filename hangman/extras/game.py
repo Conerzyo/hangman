@@ -61,7 +61,6 @@ class Game:
         """
             Method checks if is "_" char in guessed word and evaluate if game is won or not.
         """
-        #jelikož držíme celé hádané slovo můžeme zjistit konec hry tak že se v něm nebude nacházet znak "_"
         return "_" not in self.guessedWord
 
     
@@ -97,8 +96,8 @@ class Game:
             return False
 
     # functional methods for better "security" in game.
-    def save_score(self, nickname, attempts, length=0):
-        score = self.score_service.make_score_record(nickname, self.get_word_length(), attempts, length)
+    def save_score(self, nickname, attempts, lenght=0):
+        score = self.score_service.make_score_record(nickname, self.get_word_length(), attempts, lenght)
         self.score_service.save_score(score)
 
     
