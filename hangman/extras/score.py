@@ -24,9 +24,7 @@ class Score:
         """
         totalScore = 100*int(letters)+100*int(attempts)
         return [nickname, totalScore, letters, attempts, length]
-        # return f"{nickname}, {totalScore}, {letters}, {attempts}, {length}"
-        # return {"Nickname: ", nickname, "Score: ", totalScore, "Count of letters: ", letters, "Attempts left: ", attempts, "Lengts of game in seconds: ", length}
-
+        
 
     def save_score(self, scorerecord):
         """
@@ -39,7 +37,7 @@ class Score:
             writer = csv.writer(file, delimiter=",")
             writer.writerow(scorerecord)
 
-    # countOfRecords je na zadání jestli třeba TOP 5 nebo TOP 10
+    
     def load_score_data(self):
         """
             Method for loading data. CAUTION! Method is loading only nickname of player and his score.
@@ -50,7 +48,8 @@ class Score:
                 line = [line[0], int(line[1])]
                 scoreBoardsLocal.append(line)
         return scoreBoardsLocal
-        
+
+
     def print_score(self, scoreboards):
         """
             Method for printing scoreboards ingame in format Nick : Score.
